@@ -47,10 +47,13 @@ ActiveRecord::Schema.define(version: 20150420141600) do
     t.string   "city"
     t.integer  "daily_price"
     t.integer  "max_nb_of_guests"
-    t.boolean  "availability"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "availability",     default: false
+    t.integer  "user_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
+
+  add_index "chalets", ["user_id"], name: "index_chalets_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -80,4 +83,5 @@ ActiveRecord::Schema.define(version: 20150420141600) do
   add_foreign_key "bookings", "chalets"
   add_foreign_key "bookings", "users"
   add_foreign_key "chalet_pictures", "chalets"
+  add_foreign_key "chalets", "users"
 end
