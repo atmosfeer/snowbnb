@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -31,6 +31,8 @@ gem 'devise'
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
+gem 'rails_12factor', group: :production
+gem 'puma',           group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
