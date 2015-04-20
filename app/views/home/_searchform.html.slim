@@ -1,0 +1,4 @@
+= form_tag chalets_path do
+  = select_tag :city, options_for_select(['Avoriaz', 'Serre Chevalier', 'Tigne'])
+  = submit_tag "Search", class: 'btn btn-primary btn-lg'
+
