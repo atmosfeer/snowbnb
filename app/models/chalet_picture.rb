@@ -1,4 +1,4 @@
-class Picture < ActiveRecord::Base
+class ChaletPicture < ActiveRecord::Base
   belongs_to :chalet
 
   has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }

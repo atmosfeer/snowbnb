@@ -1,6 +1,6 @@
-class CreatePictures < ActiveRecord::Migration
+class ChaletPictures < ActiveRecord::Migration
   def change
-    create_table :pictures do |t|
+    create_table :chalet_pictures do |t|
       t.attachment :picture
       t.references :chalet, index: true, foreign_key: true
 
