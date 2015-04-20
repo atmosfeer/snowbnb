@@ -92,9 +92,25 @@ $navbar-profile-border-width: 2px;
       background-color: darken($navbar-btn-bg, 30%);
     }
   }
+
   .navbar-form{
     margin-top: 15px;
     margin-left: 35px;
+    .btn {
+    line-height: $navbar-btn-height;
+    padding: 0 $navbar-btn-horizontal-padding;
+    color: white;
+    border-radius: $navbar-btn-radius;
+    margin-left: 5px;
+    height: 36px;
+    font-weight: bold;
+    background-color: $navbar-btn-bg;
+    font-size: 12px;
+    &:hover{
+      background-color: darken($navbar-btn-bg, 30%);
+
+    }
+  }
   }
   .navbar-brand img, .navbar-brand svg {
     height: $navbar-height;

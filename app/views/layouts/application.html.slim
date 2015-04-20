@@ -9,8 +9,8 @@ html
 
 body
   = render 'layouts/navin'
-  p class="notice"
-    = notice
-  p class="alert"
-    = alert
+  p class="notice" = notice
+  p class="alert"  = alert
   = yield
+
+  =render 'layouts/footer'
