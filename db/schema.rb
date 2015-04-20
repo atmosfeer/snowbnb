@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150420123611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+
+  create_table "chalets", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "city"
+    t.integer  "daily_price"
+    t.integer  "max_nb_of_guests"
+    t.boolean  "availability"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
