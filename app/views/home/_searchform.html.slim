@@ -1,4 +1,10 @@
-= form_tag chalets_path do
-  = select_tag :city, options_for_select(['Avoriaz', 'Serre Chevalier', 'Tigne'])
-  = submit_tag "Search", class: 'btn btn-primary btn-lg'
+/ = simple_form_for chalets_path, defaults: { input_html: {class: 'form-inline' }} do |f|
+/   = f.input :city, collection: [ "Avoriaz", "Tigne"], input_html: {class: 'form-control input-lg'}
+/   = f.button :submit, "Search chalets", class: 'btn btn-primary btn-lg'
 
+
+= form_for chalets_path, html: {class: 'form-inline'} do |f|
+  = f.text_field :city, placeholder: "Choose a city", class: 'form-control input-lg'
+  = f.date_field :arrival_date, class: 'form-control input-lg'
+  = f.date_field :departure_date, class: 'form-control input-lg'
+  = f.submit "Search chalets", class: 'btn btn-primary btn-lg'
