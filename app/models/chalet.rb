@@ -5,5 +5,4 @@ class Chalet < ActiveRecord::Base
   validates :city, presence: true
   validates :daily_price, presence: true, numericality: true
   validates :max_nb_of_guests, presence: true, numericality: true
-  validates :availability, presence: true
 end
