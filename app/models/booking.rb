@@ -11,7 +11,7 @@ class Booking < ActiveRecord::Base
   validate :leave_after_arrive?
 
   def arrive_in_future?
-    if arrive_on < Date.now
+    if arrive_on < Date.current
       errors.add(:arrive_on, 'Arrival date must be in the future')
     end
   end
