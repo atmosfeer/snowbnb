@@ -4,30 +4,32 @@
 $navbar-color: $gray-light;
 $navbar-hover-color: $yellow;
 $navbar-font-family: $navbar-font;
-$navbar-font-size: 14px;
+$navbar-font-size: 16px;
+$navbar-title-size: 20px;
+
 $navbar-text-transform: capitalize;
-$navbar-font-weight: 300;
+$navbar-font-weight: 400;
 $navbar-letter-spacing: 1.5px;
 $navbar-font-family: $navbar-font;
-$navbar-bg: white;
+$navbar-bg: RGBA(5, 3, 6, 0.5);
 
 /* -------------------------------------
  * Box model
  * ------------------------------------- */
-$navbar-height: 50px;
-$navbar-vertical-padding: 10px;
+$navbar-height: 80px;
+$navbar-vertical-padding: 15px;
 $navbar-horizontal-padding: 20px;
-$navbar-border-bottom-width: 1px;
-$navbar-border-bottom-color: $gray-lighter;
 
 /* -------------------------------------
  * Navbar button
  * ------------------------------------- */
-$navbar-btn-height: 40px;
-$navbar-btn-bg: lightgrey;
-$navbar-btn-color: white;
-$navbar-btn-horizontal-padding: 10px;
-$navbar-btn-radius: 2px;
+$navbar-item-height: $navbar-height - 2 * ($navbar-vertical-padding);
+$navbar-img-height: $navbar-item-height;
+$navbar-btn-height: $navbar-item-height;
+$navbar-h1-padding: floor(($navbar-item-height - $navbar-title-size) / 2) - 4;
+$navbar-btn-vertical-padding: floor(($navbar-item-height - $navbar-font-size) / 2) - 4;
+$navbar-btn-horizontal-padding: $navbar-btn-vertical-padding;
+$navbar-btn-radius: 5px;
 
 /* -------------------------------------
  * Navbar profile picture
@@ -39,7 +41,16 @@ $navbar-profile-border-width: 2px;
 /* -------------------------------------
  * SCSS code
  * ------------------------------------- */
-.navbar-wagon {
+.navbar-snowbnb {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  -webkit-flex-flow: row nowrap; /* Safari */
+  flex-flow:         row nowrap;
+  -webkit-justify-content: space-around; /* Safari */
+  justify-content:         space-around;
+  -webkit-align-items: flex-start; /* Safari */
+  align-items:         flex-start;
+
   background: $navbar-bg;
   font-family: $navbar-font-family;
   border: none;
@@ -47,11 +58,73 @@ $navbar-profile-border-width: 2px;
   text-transform: $navbar-text-transform;
   font-weight: $navbar-font-weight;
   letter-spacing: $navbar-letter-spacing;
-  padding-left: $navbar-horizontal-padding;
-  padding-right: $navbar-horizontal-padding;
-  border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
-  min-height: 0;
+  padding: $navbar-vertical-padding $navbar-horizontal-padding;
+  height: $navbar-height;
   transition: background 0.4s ease;
+
+  .nav-left {
+    width: 25%;
+    height: $navbar-item-height;
+    text-align: left;
+    .logo img {
+        height: $navbar-img-height;
+    }
+  }
+
+  .nav-center {
+    width: 50%;
+    height: $navbar-item-height;
+    text-align: center;
+    vertical-align: middle;
+    .form-control {
+      width: 100%;
+      height: $navbar-item-height;
+      background: $navbar-bg;
+      border: 1px $navbar-bg;
+      border-radius: $navbar-btn-radius;
+    }
+  }
+
+  .nav-right {
+    width: 25%;
+    height: $navbar-item-height;
+    text-align: right;
+    vertical-align: middle;
+    .img-avatar {
+      border: $navbar-profile-border-width solid $navbar-profile-border-color;
+      box-shadow: 0 0 2px rgb(200, 200, 200);
+      height: $navbar-height - (2 * $navbar-profile-border-width);
+      margin-right: 10px;
+      border-radius: $navbar-profile-radius;
+    }
+
+    .navbar-nav > li > .dropdown-menu{
+      border-radius: 0;
+      margin-top: 10px;
+    }
+
+    .navbar-nav > li > .dropdown-menu:before{
+      position: absolute;
+      background: white;
+      height: 10px;
+      width: 10px;
+      content: "\00a0";
+      display: block;
+      left: 50%;
+      margin-left: -5px;
+      top: -5px;
+      transform: rotate(45deg);
+      border-top: 1px solid #e6e6e6;
+      border-left: 1px solid #e6e6e6;
+      z-index: -1;
+    }
+  }
+
+  .btn {
+    height: $navbar-btn-height;
+    padding: $navbar-btn-vertical-padding $navbar-btn-horizontal-padding;
+    border-radius: $navbar-btn-radius;
+  }
 
   .navbar-nav > li > a,
   .navbar-nav > .open > a,
@@ -60,8 +133,8 @@ $navbar-profile-border-width: 2px;
     outline: none;
     color: $navbar-color;
     line-height: $navbar-height;
-    // padding-top: $navbar-vertical-padding;
-    // padding-bottom: $navbar-vertical-padding;
+    padding-top: $navbar-vertical-padding;
+    padding-bottom: $navbar-vertical-padding;
     background-color: transparent;
   }
 
@@ -82,78 +155,15 @@ $navbar-profile-border-width: 2px;
   .navbar-nav > li > a.btn {
     line-height: $navbar-btn-height;
     padding: 0 $navbar-btn-horizontal-padding;
-    color: $navbar-btn-color;
+    color: red;
     border-radius: $navbar-btn-radius;
     margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     font-weight: bold;
-    background-color: $navbar-btn-bg;
+    background-color: orange;
     font-size: 12px;
     &:hover{
-      background-color: darken($navbar-btn-bg, 30%);
+      background-color: darken(orange, 30%);
     }
-  }
-
-  .navbar-form{
-    margin-top: 15px;
-    margin-left: 35px;
-    .btn {
-    line-height: $navbar-btn-height;
-    padding: 0 $navbar-btn-horizontal-padding;
-    color: white;
-    border-radius: $navbar-btn-radius;
-    margin-left: 5px;
-    height: 36px;
-    font-weight: bold;
-    background-color: $navbar-btn-bg;
-    font-size: 12px;
-    &:hover{
-      background-color: darken($navbar-btn-bg, 30%);
-
-    }
-  }
-  }
-  .navbar-brand img, .navbar-brand svg {
-    height: $navbar-height;
-    padding: 0px;
-  }
-
-  .img-avatar{
-    border: $navbar-profile-border-width solid $navbar-profile-border-color;
-    box-shadow: 0 0 2px rgb(200, 200, 200);
-    height: $navbar-height - (2 * $navbar-profile-border-width);
-    margin-right: 10px;
-    border-radius: $navbar-profile-radius;
-  }
-
-  .navbar-toggle {
-    border-color: #dddddd;
-    width: 45px;
-    background: transparent;
-  }
-
-  .navbar-nav > li > .dropdown-menu{
-    border-radius: 0;
-    margin-top: 10px;
-  }
-
-  .navsearch{
-    position: relative;
-  }
-
-  .navbar-nav > li > .dropdown-menu:before{
-    position: absolute;
-    background: white;
-    height: 10px;
-    width: 10px;
-    content: "\00a0";
-    display: block;
-    left: 50%;
-    margin-left: -5px;
-    top: -5px;
-    transform: rotate(45deg);
-    border-top: 1px solid #e6e6e6;
-    border-left: 1px solid #e6e6e6;
-    z-index: -1;
   }
 }
 
