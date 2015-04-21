@@ -4,5 +4,5 @@ p Description : #{@chalet.description}
 p Rate : #{@chalet.daily_price} euros a night
 p Capacity : #{@chalet.max_nb_of_guests} guests per night
 button Back (to Search results or My chalets)
-button Book (if renter)
+button = button_to "Book", new_chalet_booking_path(@chalet), method: :get
 button Manage (if owner)

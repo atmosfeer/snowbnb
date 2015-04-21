@@ -1,6 +1,5 @@
 module Account
   class BaseController < ApplicationController
-    before_action :autenticate_user!
+    before_action :authenticate_user!
   end
-
 end
