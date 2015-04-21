@@ -4,3 +4,21 @@
  * Before writing in this file, look if there is not
  * already a Bootstrap SCSS variable that does the same job
  * ------------------------------------- */
+
+body {
+  color: $gray-darker;
+  font-family: $base-font;
+  font-size: $base-size;
+  background-color: $gray-much-lighter;
+}
+
+
+
+.body-wrapper {
+  width: 70%;
+  margin: 10px auto;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid $gray-lighter;
+  border-radius: 5px;
+}

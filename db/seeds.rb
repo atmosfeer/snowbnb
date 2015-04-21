@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+5.times do
+  Chalet.create(
+    title: Faker::Lorem.sentence,
+    description: Faker::Lorem.sentences(4),
+    city: Faker::Address.city,
+    daily_price: 50,
+    max_nb_of_guests: [1,2,3,4,5].sample,
+    availability: false
+    )
+end
