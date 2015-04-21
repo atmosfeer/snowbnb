@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 5.times do
-  Chalet.create(
-    title: Faker::Lorem.sentence,
-    description: Faker::Lorem.sentences(4),
-    city: Faker::Address.city,
-    daily_price: 50,
+  Chalet.create({
+    title:            Faker::Lorem.sentence,
+    description:      Faker::Lorem.sentence(4),
+    city:             Faker::Address.city,
+    daily_price:      [50,60,70,80].sample,
     max_nb_of_guests: [1,2,3,4,5].sample,
-    availability: false
-    )
+    availability:     false
+    })
 end

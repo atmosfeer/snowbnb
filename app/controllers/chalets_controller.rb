@@ -3,5 +3,6 @@ class ChaletsController < ApplicationController
   end
 
   def show
+    @chalet = Chalet.find(params[:id])
   end
 end
