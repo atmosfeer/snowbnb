@@ -16,6 +16,8 @@ div.container
               h4 = chalet.title
 
       - unless current_user.bookings.empty?
+
+        h3 Your Bookings
         ul
           - current_user.bookings.each do |booking|
             li
