@@ -1,5 +1,10 @@
 module Account
   class UsersController < BaseController
+
+      def show
+        @user = current_user
+      end
+
       def edit
       @user = current_user
     end
@@ -7,6 +12,11 @@ module Account
     def update
       @user = current_user
       @user.update(user_params)
+      if @user.save
+        redirect_to account_user_path
+      else
+        render 'edit'
+      end
     end
   end
 
