@@ -1,0 +1,8 @@
+<%= simple_form_for([ @user ], html: { multipart: true }) do |f| %>
+  <%= f.input :email, label: "Your e-mail" %>
+  <%= f.input :first_name, label: "Your first name" %>
+  <%= f.input :last_name, label: "Your last name" %>
+  <%= f.input :encrypted_password, label: "Password" %>
+  <%= f.input :picture, label: "Choose your profile picture" %>
+  <%= f.button :submit %>
+<% end %>
