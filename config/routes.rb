@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, only: []
+  devise_for :users
 
   resources :chalets, only: [:index, :show]
   resources :users, only: [:new, :create, :show]
