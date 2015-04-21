@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
   validates :email, uniqueness: true, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+
 
 end
