@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def home
+  def index
     @cities = Chalet.select('distinct(city)').map(&:city)
   end
 end
