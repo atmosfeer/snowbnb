@@ -1,0 +1,8 @@
+<%= simple_form_for([ @chalet ], url: account_chalets_path, method: :post) do |f| %>
+  <%= f.input :title, label: "Chalet name" %>
+  <%= f.input :description, label: "Chalet description" %>
+  <%= f.input :city, label: "Location" %>
+  <%= f.input :daily_price, label: "Price per day" %>
+  <%= f.input :max_nb_of_guests, label: "Maximum number of guests" %>
+  <%= f.button :submit %>
+<% end %>

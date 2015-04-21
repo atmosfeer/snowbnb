@@ -2,13 +2,13 @@ module Account
   class ChaletsController < BaseController
     before_action :set_chalet, only: [:edit, :update, :destroy]
     def new
-      @chalet = current_user.Chalet.new
+      @chalet = current_user.chalets.new
     end
 
     def create
-      @chalet = current_user.Chalet.new(chalet_params)
-      if @chalet. save
-        redirect_to chalet_path(@chalet)
+      @chalet = current_user.chalets.new(chalet_params)
+      if @chalet.save!
+        redirect_to account_user_path
       else
         render 'new'
       end
@@ -33,7 +33,7 @@ module Account
     end
 
     def index
-      @chalets = current_user.Chalet.all
+      @chalets = current_user.chalets.all
 
     end
 
