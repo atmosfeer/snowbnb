@@ -1,1 +1,9 @@
-// Your footer style
+#footer{
+  background-color: white;
+  height: 95px;
+  color: $gray-light;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+}
