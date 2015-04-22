@@ -1,41 +1,41 @@
-div.container
-  div.row
-    div.col-sm-4.hidden-xs
-      = image_tag current_user.picture(:medium)
-      p = link_to 'Edit my profile'
-      p = link_to 'Add a chalet', new_account_chalet_path
-    div.col-sm-8.col-xs-12
-      h2 = "Welcome, #{current_user.first_name}"
-      p = current_user.email
+  div.container.padded
+    div.row
+      div.col-sm-4.hidden-xs
+        = image_tag current_user.picture(:medium)
+        p = link_to 'Edit my profile'
+        p = link_to 'Add a chalet', new_account_chalet_path
+      div.col-sm-8.col-xs-12#dash-title
+        h2 = "Welcome, #{current_user.first_name}"
+        p = current_user.email
 
-      - unless current_user.chalets.empty?
-        h3 My Chalets
-        ul
-          - current_user.chalets.each do |chalet|
-            li
-              h4 = link_to chalet.title, chalet_url(chalet)
-              p = chalet.city
-              p = chalet.description
-              p = link_to "Edit this chalet", edit_account_chalet_url(chalet)
-              p = link_to "Delete this chalet", account_chalet_url(chalet), method: :delete, data: { confirm: "Are you sure?" }
-
-      - unless current_user.bookings.empty?
-
-        h3 Your Bookings
-        ul
-          - current_user.bookings.each do |booking|
-            li
-              h4 = booking.chalet.title
-              p = booking.total_price
-
-      - current_user.chalets.each do |chalet|
-        - unless chalet.bookings.empty?
-          h3 Your Chalets' Bookings
+        - unless current_user.chalets.empty?
+          h3 My Chalets
           ul
-            - chalet.bookings.each do |booking|
+            - current_user.chalets.each do |chalet|
               li
-                h4 = booking.user.first_name
+                h4 = link_to chalet.title, chalet_url(chalet)
+                p = chalet.city
+                p = chalet.description
+                p = link_to "Edit this chalet", edit_account_chalet_url(chalet)
+                p = link_to "Delete this chalet", account_chalet_url(chalet), method: :delete, data: { confirm: "Are you sure?" }
+
+        - unless current_user.bookings.empty?
+
+          h3 Your Bookings
+          ul
+            - current_user.bookings.each do |booking|
+              li
+                h4 = booking.chalet.title
                 p = booking.total_price
+
+        - current_user.chalets.each do |chalet|
+          - unless chalet.bookings.empty?
+            h3 Your Chalets' Bookings
+            ul
+              - chalet.bookings.each do |booking|
+                li
+                  h4 = booking.user.first_name
+                  p = booking.total_price
 
 
 
