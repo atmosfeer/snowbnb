@@ -8,12 +8,12 @@ div.container
       h2 = "Welcome, #{current_user.first_name}"
       p = current_user.email
 
-      - if !current_user.chalets.empty?
+      - unless current_user.chalets.empty?
         h3 My Chalets
         ul
           - current_user.chalets.each do |chalet|
             li
-              h4 = chalet.title
+              h4 = link_to chalet.title, chalet_path(chalet)
 
       - unless current_user.bookings.empty?
 

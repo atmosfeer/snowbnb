@@ -2,7 +2,6 @@
  * Colors & Fonts
  * ------------------------------------- */
 $navbar-color: $gray-light;
-$navbar-hover-color: $yellow;
 $navbar-font-family: $navbar-font;
 $navbar-font-size: 16px;
 $navbar-title-size: 20px;
@@ -36,7 +35,7 @@ $navbar-btn-radius: 5px;
  * ------------------------------------- */
 $navbar-profile-radius: 50%;
 $navbar-profile-border-color: white;
-$navbar-profile-border-width: 2px;
+$navbar-profile-border-width: 1px;
 
 /* -------------------------------------
  * SCSS code
@@ -80,6 +79,8 @@ $navbar-profile-border-width: 2px;
     .form-control {
       width: 100%;
       height: $navbar-item-height;
+      color: $gray-much-lighter;
+      letter-spacing: $navbar-letter-spacing;
       background: $navbar-bg;
       border: 1px $navbar-bg;
       border-radius: $navbar-btn-radius;
@@ -91,33 +92,21 @@ $navbar-profile-border-width: 2px;
     height: $navbar-item-height;
     text-align: right;
     vertical-align: middle;
-    .img-avatar {
-      border: $navbar-profile-border-width solid $navbar-profile-border-color;
-      box-shadow: 0 0 2px rgb(200, 200, 200);
-      height: $navbar-height - (2 * $navbar-profile-border-width);
-      margin-right: 10px;
-      border-radius: $navbar-profile-radius;
-    }
-
-    .navbar-nav > li > .dropdown-menu{
-      border-radius: 0;
-      margin-top: 10px;
-    }
-
-    .navbar-nav > li > .dropdown-menu:before{
-      position: absolute;
-      background: white;
-      height: 10px;
-      width: 10px;
-      content: "\00a0";
-      display: block;
-      left: 50%;
-      margin-left: -5px;
-      top: -5px;
-      transform: rotate(45deg);
-      border-top: 1px solid #e6e6e6;
-      border-left: 1px solid #e6e6e6;
-      z-index: -1;
+    .dropdown {
+      height: $navbar-item-height;
+      .img-avatar {
+        border: $navbar-profile-border-width solid $navbar-profile-border-color;
+        height: $navbar-img-height;
+        margin-right: 10px;
+        border-radius: $navbar-profile-radius;
+      }
+      .dropdown-menu {
+        border-radius: $navbar-btn-radius;
+      }
+      .dropdown-menu > li {
+        border-radius: 0;
+        padding: 5px 0;
+      }
     }
   }
 
@@ -127,45 +116,21 @@ $navbar-profile-border-width: 2px;
     border-radius: $navbar-btn-radius;
   }
 
-  .navbar-nav > li > a,
-  .navbar-nav > .open > a,
-  .navbar-nav > li > a:focus,
-  .navbar-nav > .open > a:focus {
-    outline: none;
-    color: $navbar-color;
-    line-height: $navbar-height;
-    padding-top: $navbar-vertical-padding;
-    padding-bottom: $navbar-vertical-padding;
-    background-color: transparent;
+  a.dropdown-toggle {
+    color: $gray-lighter;
   }
 
-  .navbar-nav > li > a:hover,
-  .navbar-nav > .open > a:hover {
-    color: $navbar-hover-color;
-    background-color: transparent;
+  a.dropdown-toggle:hover {
+    color: white;
   }
 
-  .navbar-brand,
-  .navbar-brand:hover {
-    outline: none;
-    color: $navbar-color;
-    padding-top: $navbar-vertical-padding;
-    padding-bottom: $navbar-vertical-padding;
-  }
+  // a.dropdown-menu {
+  //   color: red;
+  // }
 
-  .navbar-nav > li > a.btn {
-    line-height: $navbar-btn-height;
-    padding: 0 $navbar-btn-horizontal-padding;
-    color: red;
-    border-radius: $navbar-btn-radius;
-    margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
-    font-weight: bold;
-    background-color: orange;
-    font-size: 12px;
-    &:hover{
-      background-color: darken(orange, 30%);
-    }
-  }
+  // a.dropdown-menu:hover {
+  //   color: dark-red;
+  // }
 }
 
 /* -------------------------------------
@@ -173,16 +138,4 @@ $navbar-profile-border-width: 2px;
  * ------------------------------------- */
 
 @media screen and (max-width: 768px) {
-  .navbar-wagon {
-    .navbar-brand img, .navbar-brand svg {
-      height: 50px;
-    }
-    .navbar-brand, .navbar-brand:hover
-     {
-      display: block;
-      color: $navbar-color;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  }
 }
