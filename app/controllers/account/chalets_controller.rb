@@ -35,7 +35,7 @@ module Account
 
     def destroy
       @chalet.destroy
-      redirect_to account_chalets_path
+      redirect_to account_user_path
     end
 
     def index

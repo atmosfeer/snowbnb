@@ -13,7 +13,11 @@ div.container
         ul
           - current_user.chalets.each do |chalet|
             li
-              h4 = link_to chalet.title, chalet_path(chalet)
+              h4 = link_to chalet.title, chalet_url(chalet)
+              p = chalet.city
+              p = chalet.description
+              p = link_to "Edit this chalet", edit_account_chalet_url(chalet)
+              p = link_to "Delete this chalet", account_chalet_url(chalet), method: :delete, data: { confirm: "Are you sure?" }
 
       - unless current_user.bookings.empty?
 
