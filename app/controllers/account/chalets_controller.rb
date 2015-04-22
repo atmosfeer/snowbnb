@@ -9,8 +9,10 @@ module Account
     def create
       chalet_params[:city] = chalet_params[:city].capitalize
       @chalet = current_user.chalets.new(chalet_params)
+
       if @chalet.save!
-        flash[:notice] = "Your chalet has been added."
+
+      flash[:notice] = "Your chalet has been added."
         redirect_to account_user_path
       else
         flash[:alert] = "Something went wrong."
@@ -46,7 +48,7 @@ module Account
 
     private
     def chalet_params
-      params.require(:chalet).permit(:title, :description, :city, :daily_price, :max_nb_of_guests, :availability)
+      params.require(:chalet).permit(:title, :description, :city, :daily_price, :max_nb_of_guests, :availability, chalet_pictures_attributes: [ :picture ])
     end
 
     def set_chalet
