@@ -5,8 +5,8 @@ nav class="navbar-snowbnb" role="navigation"
 
   div.nav-center
     - if user_signed_in?
-      = form_for :search, url: "#", method: :get do |f|
-        = f.text_field :query, autofocus: true, class: "form-control", placeholder: 'Search chalets...'
+      = form_for :search, url: search_chalets_path, method: :get do |f|
+        = f.text_field :query, autofocus: true, class: "form-control", placeholder: 'Where do you want to go?'
 
   div.nav-right
     - if user_signed_in?

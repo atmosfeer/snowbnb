@@ -1,0 +1,8 @@
+.container
+  .row
+    .col-xs-6.col-xs-offset-6
+      .padded
+        h2 = "Available chalets in #{@city}"
+
+        - @chalets.each do |chalet|
+            p = chalet.title

@@ -7,6 +7,7 @@ module Account
     end
 
     def create
+      chalet_params[:city] = chalet_params[:city].capitalize
       @chalet = current_user.chalets.new(chalet_params)
       if @chalet.save!
         flash[:notice] = "Your chalet has been added."

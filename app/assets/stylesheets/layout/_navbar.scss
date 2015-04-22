@@ -49,6 +49,7 @@ $navbar-profile-border-width: 1px;
   justify-content:         space-around;
   -webkit-align-items: flex-start; /* Safari */
   align-items:         flex-start;
+  z-index: 5;
 
   background: $navbar-bg;
   font-family: $navbar-font-family;
