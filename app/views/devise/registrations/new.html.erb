@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Create your user account</h2>
+
+<div class="container">
+  <div class="row centered">
+    <div class="col-xs-12 col-ml-4">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -18,3 +22,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+</div>

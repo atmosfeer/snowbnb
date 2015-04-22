@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-ml-4 centered">
+  <div class="row centered">
+    <div class="col-xs-12 col-ml-4">
       <%= simple_form_for([ @chalet ], url: account_chalets_path, method: :post, html: {multipart: true}) do |f| %>
         <%= f.input :title, label: "Chalet name" %>
         <%= f.input :description, label: "Chalet description" %>
