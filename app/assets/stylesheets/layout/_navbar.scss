@@ -60,6 +60,7 @@ $navbar-profile-border-width: 1px;
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
   height: $navbar-height;
   transition: background 0.4s ease;
+  z-index: 10;
 
   .nav-left {
     width: 25%;
