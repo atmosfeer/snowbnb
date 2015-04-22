@@ -1,8 +1,19 @@
-.container
+h1 = "Available chalets in #{@city}"
+.container-fluid
   .row
-    .col-xs-6.col-xs-offset-6
-      .padded
-        h2 = "Available chalets in #{@city}"
+    - @chalets.each do |chalet|
+      .col-xs-4
+        .card
+          .card-head
+            = image_tag(chalet.chalet_pictures.first, alt: "Chalet Picture")
+            .card-title
+              h2 = chalet.title
+              h3 = chalet.city
+          .card-content
+            p = chalet.description
+            p = "#{chalet.daily_price} euros a night"
+            p = "#{chalet.max_nb_of_guests} guests per night"
+          .card-action
+            = link_to "Back", chalets_path, class: "btn btn-default"
+            = link_to "Book chalet", new_chalet_booking_path(chalet), class: "btn btn-primary"
 
-        - @chalets.each do |chalet|
-            p = link_to chalet.title, chalet_path(chalet)
