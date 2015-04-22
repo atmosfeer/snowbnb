@@ -1,6 +1,9 @@
 class Chalet < ActiveRecord::Base
   belongs_to :user
   has_many :bookings
+  has_many :chalet_pictures, dependent: :destroy
+
+  accepts_nested_attributes_for :chalet_pictures, reject_if: lambda { |c| c['chalet_picture'].nil? }
 
   validates :title, presence: true, uniqueness: true
   validates :city, presence: true
