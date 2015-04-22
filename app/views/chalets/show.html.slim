@@ -1,8 +1,15 @@
-h1 = @chalet.title
-h2 in #{@chalet.city}
-p Description : #{@chalet.description}
-p Rate : #{@chalet.daily_price} euros a night
-p Capacity : #{@chalet.max_nb_of_guests} guests per night
-button Back (to Search results or My chalets)
-button = button_to "Book", new_chalet_booking_path(@chalet), method: :get
-button Manage (if owner)
+h1 Chalet
+
+.card
+  .card-head
+    = image_tag("home-background.jpg", size: "300x300", alt: "Chalet Picture")
+    .card-title
+      h2 = @chalet.title
+      h3 = @chalet.city
+  .card-content
+    p = @chalet.description
+    p = "#{@chalet.daily_price} euros a night"
+    p = "#{@chalet.max_nb_of_guests} guests per night"
+  .card-action
+    = link_to "Back", chalets_path, class: "btn btn-default"
+    = link_to "Book chalet", new_chalet_booking_path(@chalet), class: "btn btn-primary"
