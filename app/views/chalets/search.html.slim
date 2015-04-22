@@ -5,7 +5,7 @@ h1 = "Available chalets in #{@city}"
       .col-xs-4
         .card
           .card-head
-            = image_tag(chalet.chalet_pictures.first, alt: "Chalet Picture")
+            = image_tag(chalet.chalet_pictures.first.picture, alt: "Chalet Picture")
             .card-title
               h2 = chalet.title
               h3 = chalet.city
