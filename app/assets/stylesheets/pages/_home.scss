@@ -14,11 +14,11 @@
   color: $light-grey;
   h1 {
   color: white;
-  padding-top: 250px;
   padding-bottom: 20px;
   margin-top: 0px;
   text-transform: uppercase;
   letter-spacing: 10px;
+  z-index: 1;
   }
   .form-control{
     width: 30%;
@@ -34,6 +34,13 @@
     border-radius: $navbar-btn-radius;
     color: $light-grey;
   }
+}
+
+#main-search{
+  text-align: center;
+  padding-right: 300px;
+  top: 250px;
+  position: absolute;
 }
 
 .home-search{
