@@ -6,6 +6,7 @@ module Account
     end
 
     def create
+      chalet_params[:city] = chalet_params[:city].capitalize
       @chalet = current_user.chalets.new(chalet_params)
       if @chalet.save!
         redirect_to account_user_path

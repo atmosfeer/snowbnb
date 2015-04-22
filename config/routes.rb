@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :chalets, only: [:index, :show] do
+    collection do
+      get 'search'
+    end
     resources :bookings, only: [:new, :create, :edit, :update, :destroy]
   end
 

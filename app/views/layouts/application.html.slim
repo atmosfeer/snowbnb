@@ -9,8 +9,10 @@ html
 
 body
   = render 'layouts/navbar'
-  p class="notice" = notice
-  p class="alert"  = alert
+
   = yield
 
-  =render 'layouts/footer'
+  = render 'layouts/footer'
+
+  p class="notice" = notice
+  p class="alert"  = alert
