@@ -6,7 +6,7 @@
         .card
           .card-head
             - if chalet.chalet_pictures.any?
-              = image_tag(chalet.chalet_pictures.first.picture.url(:medium), alt: "Chalet Picture")
+              = link_to image_tag(chalet.chalet_pictures.first.picture.url(:medium), alt: "Chalet Picture"), chalet_path(chalet)
             - else
               = image_tag("http://lorempixel.com/g/300/300/nature/")
             .card-title
