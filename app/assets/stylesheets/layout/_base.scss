@@ -22,3 +22,53 @@ body {
   border: 1px solid $gray-lighter;
   border-radius: 5px;
 }
+
+.card {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid $gray-lighter;
+  border-radius: 3px;
+  .card-head {
+    position: relative;
+    text-align: left;
+    img {
+      width: 100%;
+      z-index: 1;
+    }
+    .card-title {
+      position: absolute;
+      bottom: 10;
+      left: 10;
+      z-index: 10;
+      h2, h3 {
+        padding-bottom: 5;
+        margin: 0;
+        color: white;
+        font-size: 18px;
+      }
+      h2 {
+        font-weight: 400;
+      }
+      h3 {
+        font-weight: 300;
+      }
+    }
+  }
+  .card-content {
+    padding: 10;
+    text-align: left;
+    p {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+  .card-action {
+    padding: 10 10 30 10;
+    text-align: center;
+    .btn {
+      margin: 0 5 0 5;
+    }
+  }
+}
