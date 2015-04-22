@@ -5,4 +5,4 @@
         h2 = "Available chalets in #{@city}"
 
         - @chalets.each do |chalet|
-            p = chalet.title
+            p = link_to chalet.title, chalet_path(chalet)
