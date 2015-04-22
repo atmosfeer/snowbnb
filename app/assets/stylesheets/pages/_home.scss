@@ -2,7 +2,7 @@
   background:
   linear-gradient(
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.6)
+    rgba(0, 0, 0, 0.3)
     ),
   image-url("home-background.jpg");
   height: 100%;
@@ -18,10 +18,10 @@
   padding-bottom: 20px;
   margin-top: 0px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 10px;
   }
   .form-control{
-    width: 25%;
+    width: 30%;
     height: $navbar-item-height;
     color: $gray-much-lighter;
     letter-spacing: $navbar-letter-spacing;
