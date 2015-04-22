@@ -1,16 +1,18 @@
-h1 = "Available chalets in #{@city}"
-.container-fluid
+.container.padded
   .row
+    h1.text-center = "Available chalets in #{@city}"
     - @chalets.each do |chalet|
-      .col-xs-4
+      .col-xs-12.col-sm-6.col-md-4
         .card
           .card-head
-            = image_tag(chalet.chalet_pictures.first, alt: "Chalet Picture")
+            - if chalet.chalet_pictures.any?
+              = image_tag(chalet.chalet_pictures.first.picture.url(:medium), alt: "Chalet Picture")
+            - else
+              = image_tag("http://lorempixel.com/g/300/300/nature/")
             .card-title
               h2 = chalet.title
               h3 = chalet.city
           .card-content
-            p = chalet.description
             p = "#{chalet.daily_price} euros a night"
             p = "#{chalet.max_nb_of_guests} guests per night"
           .card-action
