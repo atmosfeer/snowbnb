@@ -42,7 +42,6 @@ module Account
 
     def index
       @chalets = current_user.chalets.all
-
     end
 
 
