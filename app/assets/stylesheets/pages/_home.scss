@@ -1,27 +1,84 @@
-.fullscreen-bg {
-  position:absolute;
-  top:0;
-  left:0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background-image: image-url("home-background.jpg");
-}
-
 .fullscreen-search {
-  top: 40%;
-  padding-top: $navbar-height;
-  padding-bottom: 207px;
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.6)
+    ),
+  image-url("home-background.jpg");
+  height: 100%;
+  width: 100%;
+  margin-top: -80px;
+  padding-bottom: 145px;
   text-align: center;
   font-weight: 300;
-  color: $gray-light;
+  color: $light-grey;
   h1 {
   color: white;
-  padding: 1.5em;
+  padding-top: 250px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   }
-  .form-control,
+  .form-control{
+    width: 25%;
+    height: $navbar-item-height;
+    color: $gray-much-lighter;
+    letter-spacing: $navbar-letter-spacing;
+    background: $navbar-bg;
+    border: 1px $navbar-bg;
+    border-radius: $navbar-btn-radius;
+  }
   .btn {
     margin: 0px 5px;
+    border-radius: $navbar-btn-radius;
+    color: $light-grey;
   }
 }
+
+.home-search{
+  margin-right: 10px;
+}
+
+.notice{
+  display: none;
+}
+
+.alert{
+  display: none;
+}
+
+
+
+
+
+
+
+////////////////////////////////////// Willem's Stuff Below
+// .fullscreen-bg {
+//   position:absolute;
+//   top:0;
+//   left:0;
+//   z-index: -1;
+//   width: 100%;
+//   height: 100%;
+//   margin: 0;
+//   background-image: image-url("home-background.jpg");
+// }
+
+// .fullscreen-search {
+//   top: 40%;
+//   padding-top: $navbar-height;
+//   padding-bottom: 207px;
+//   text-align: center;
+//   font-weight: 300;
+//   color: $gray-light;
+//   h1 {
+//   color: white;
+//   padding: 1.5em;
+//   }
+//   .form-control,
+//   .btn {
+//     margin: 0px 5px;
+//   }
+// }

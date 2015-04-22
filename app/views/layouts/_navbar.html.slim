@@ -4,7 +4,7 @@ nav class="navbar-snowbnb" role="navigation"
       = image_tag "SnowBnB_logo.svg"
 
   div.nav-center
-    - if user_signed_in?
+    - unless current_page?(root_path)
       = form_for :search, url: search_chalets_path, method: :get do |f|
         = f.text_field :query, autofocus: true, class: "form-control", placeholder: 'Where do you want to go?'
 
