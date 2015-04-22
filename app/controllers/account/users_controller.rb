@@ -1,11 +1,11 @@
 module Account
   class UsersController < BaseController
 
-      def show
-        @user = current_user
-      end
+    def show
+      @user = current_user
+    end
 
-      def edit
+    def edit
       @user = current_user
     end
 
@@ -23,10 +23,7 @@ module Account
   private
 
   def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :encrypted_password, :picture)
-    end
-
-
-
+    params.require(:user).permit(:first_name, :last_name, :email, :encrypted_password, :picture)
+  end
 
 end
