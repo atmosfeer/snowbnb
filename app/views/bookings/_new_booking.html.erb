@@ -1,5 +1,13 @@
-<%= simple_form_for([ @booking ], url: chalet_bookings_path, method: :post) do |f| %>
-  <%= f.input :arrive_on, label: "Your arrival date" %>
-  <%= f.input :leave_on, label: "Your departure date" %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="row centered">
+    <div class="col-xs-12 col-ml-4">
+
+      <%= simple_form_for([ @booking ], url: chalet_bookings_path, method: :post) do |f| %>
+        <%= f.input :arrive_on, label: "Your arrival date" %>
+        <%= f.input :leave_on, label: "Your departure date" %>
+        <%= f.button :submit %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
