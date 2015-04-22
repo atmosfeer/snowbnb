@@ -17,3 +17,6 @@
 
 # Ignore stuff we don't know that we need to ignore (or not ignore). In fact it may not even matter.
 /.DS_Store
+
+# Ignore application configuration
+/config/application.yml
