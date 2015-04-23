@@ -21,6 +21,10 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+<<<<<<< HEAD
+=======
+
+>>>>>>> f8c92b68cdce8fe6d26323c2b105c6fc5be7e4b9
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -37,6 +41,8 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
+
+gem 'owlcarousel-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

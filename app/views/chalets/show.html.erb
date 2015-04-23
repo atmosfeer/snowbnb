@@ -1,0 +1,9 @@
+
+
+<% if @chalet.chalet_pictures.any? %>
+  <div class="owl-carousel">
+    <% @chalet.chalet_pictures.each do |pic| %>
+      <div> <%= image_tag pic.picture.url(:original) %> </div>
+    <% end %>
+  </div>
+<% end %>
