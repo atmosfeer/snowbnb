@@ -3,6 +3,10 @@
 <%= render 'edit_chalet' %>
 
 <ul class="list-inline">
-<% @chalet.chalet_pictures.each do |pic| %>
-  <li> <%= image_tag pic.picture.url %> </li>
+<% @chalet.chalet_pictures.select(&:persisted?).each do |pic| %>
+  <li>
+    <%= image_tag pic.picture.url(:thumb) %>
+    <%= link_to "Delete this picture", account_chalet_chalet_picture_path(@chalet, pic), method: :delete  %>
+  </li>
+  <% end %>
 </ul>
