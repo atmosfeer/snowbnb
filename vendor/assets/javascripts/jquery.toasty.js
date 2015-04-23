@@ -1,7 +1,7 @@
-/*
+﻿/*
  * Toasty v0.1.0
  * Show Dan Forden's Toasty from Mortal Kombat as an Easter Egg for your website
- * (c)2014 Rub�n Torres - rubentdlh@gmail.com
+ * (c)2014 Rubén Torres - rubentdlh@gmail.com
  * Released under the MIT license
  */
 

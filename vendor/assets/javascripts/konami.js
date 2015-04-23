@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Konami-JS ~
  * :: Now with support for touch events and multiple instances for
  * :: those situations that call for multiple easter eggs!
