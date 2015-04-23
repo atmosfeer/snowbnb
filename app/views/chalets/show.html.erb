@@ -1,9 +1,28 @@
 
+<% content_for(:after_js) %>
+
+<div class="chalet-name text-right">
+  <h2><%= @chalet.title %> </h1>
+  <h3> <%= @chalet.city %> </h2>
+</div>
 
 <% if @chalet.chalet_pictures.any? %>
-  <div class="owl-carousel">
-    <% @chalet.chalet_pictures.each do |pic| %>
-      <div> <%= image_tag pic.picture.url(:original) %> </div>
-    <% end %>
+  <div class="centered-carousel">
+    <div class="owl-carousel">
+      <% @chalet.chalet_pictures.each do |pic| %>
+        <div> <%= image_tag pic.picture.url(:cover) %> </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
+
+<%= link_to "Book this chalet", new_chalet_booking_path(@chalet), class: "btn btn-primary" %>
+
+<h3>Chalet Description</h3>
+<p> <%= @chalet.description %> </p>
+<h3> Maximum number of guests</h3>
+<p> <%= @chalet.max_nb_of_guests %> </p>
+<h3> Daily price of the chalet</h3>
+<p> <%= @chalet.daily_price %> </p>
+<h3>Chalet owner</h3>
+<p><%= link_to @user.name, user_path(@user) %></p>

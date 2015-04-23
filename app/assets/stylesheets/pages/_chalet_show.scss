@@ -1,0 +1,22 @@
+.centered-carousel {
+  margin: 20px auto;
+  width: 85%;
+  position: relative;
+  z-index: 1;
+}
+
+.chalet-name {
+  position: absolute;
+  z-index: 8;
+  top: 560px;
+  left: 0;
+  padding: 15 10 15 140;
+  background-color: rgb(70, 70, 70);
+  border-radius: 3px;
+  h2, h3 {
+        padding: 5 10 5 10;
+        margin: 0;
+        color: white;
+  }
+
+}

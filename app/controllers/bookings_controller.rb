@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    raise
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     @chalet = Chalet.find(params[:chalet_id])
@@ -31,6 +32,10 @@ class BookingsController < ApplicationController
   private
   def booking_params
       params.require(:booking).permit(:arrive_on, :leave_on, :chalet_id, :user_id)
-    end
+  end
+
+  def available?
+
+  end
 
 end

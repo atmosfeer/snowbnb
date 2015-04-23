@@ -4,6 +4,7 @@ class ChaletsController < ApplicationController
 
   def show
     @chalet = Chalet.find(params[:id])
+    @user = User.find(@chalet.user_id)
   end
 
   def search
