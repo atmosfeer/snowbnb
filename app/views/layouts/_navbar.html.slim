@@ -1,48 +1,51 @@
 nav class="navbar-snowbnb" role="navigation"
-  div.nav-left
-    = link_to "/", {class: "logo"}
-      = image_tag "SnowBnB_logo.svg"
+  .container-fluid
+    .row
+      div.navbar-section.col-xs-12.col-md-6.col-lg-4
+        = link_to "/", {class: "logo"}
+          = image_tag "SnowBnB_logo.svg"
 
-  div.nav-center
-    - unless current_page?(root_path)
-      = form_for :search, url: search_chalets_path, method: :get do |f|
-        = f.text_field :query, autofocus: true, class: "form-control", placeholder: 'Where do you want to go?'
+      div.navbar-section.col-xs-12.col-md-6.col-lg-4
+        - unless current_page?(root_path)
+          = form_for :search, url: search_chalets_path, method: :get do |f|
+            = f.text_field :query, autofocus: true, class: "form-control", placeholder: 'Where do you want to go?'
 
-  div.nav-right
-    - if user_signed_in?
-      div class="dropdown"
-        = link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do
-          = image_tag current_user.picture, class: "img-avatar"
-          = current_user.first_name
+      div.navbar-section.col-xs-12.col-md-6.col-lg-4
 
-        ul class="dropdown-menu dropdown-menu-right" role="menu"
-          li
-            = link_to account_chalets_path do
-              i class="fa fa-home"
-              ' My Chalets
+        - if user_signed_in?
+          div class="dropdown"
+            = link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do
+              = image_tag current_user.picture, class: "img-avatar"
+              = current_user.first_name
 
-          li
-            = link_to account_bookings_path do
-              i class="fa fa-book"
-              ' My Bookings
+            ul class="dropdown-menu" role="menu"
+              li
+                = link_to account_chalets_path do
+                  i class="fa fa-home"
+                  ' My Chalets
 
-          li
-            = link_to account_user_path do
-              i class="fa fa-user"
-              ' My Profile
+              li
+                = link_to account_bookings_path do
+                  i class="fa fa-book"
+                  ' My Bookings
 
-          li
-            = link_to destroy_user_session_path, method: :delete do
-              i class="fa fa-sign-out"
-              ' Sign out
-    - else
-      ul.list-inline
-        li
-          = link_to "Sign in", new_user_session_path, class: 'btn btn-default'
-        li
-          = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary btn-fb' do
-            i class="fa fa-facebook-square"
-            | Sign in
-        li
-          = link_to "Sign up", new_user_registration_path, class: 'btn btn-primary'
+              li
+                = link_to account_user_path do
+                  i class="fa fa-user"
+                  ' My Profile
+
+              li
+                = link_to destroy_user_session_path, method: :delete do
+                  i class="fa fa-sign-out"
+                  ' Sign out
+        - else
+          ul.list-inline
+            li
+              = link_to "Sign in", new_user_session_path, class: 'btn btn-default'
+            li
+              = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary btn-fb' do
+                i class="fa fa-facebook-square"
+                | Sign in
+            li
+              = link_to "Sign up", new_user_registration_path, class: 'btn btn-primary'
 
