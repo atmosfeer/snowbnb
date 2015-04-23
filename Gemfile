@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -13,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem "geocoder"
 gem "gmaps4rails"
-gem "rails-assets-underscore"
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -39,6 +41,7 @@ gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
 
 gem 'owlcarousel-rails'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
