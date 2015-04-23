@@ -1,3 +1,8 @@
 <h1>Edit the <%= @chalet.title %> chalet</h1>
 
-<%= render 'new_chalet' %>
+<%= render 'edit_chalet' %>
+
+<ul class="list-inline">
+<% @chalet.chalet_pictures.each do |pic| %>
+  <li> <%= image_tag pic.picture.url %> </li>
+</ul>

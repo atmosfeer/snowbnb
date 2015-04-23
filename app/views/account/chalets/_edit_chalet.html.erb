@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row centered">
+    <div class="col-xs-12 col-ml-4">
+      <%= simple_form_for([ @chalet ], url: account_chalet_path(@chalet), method: :patch, html: {multipart: true}) do |f| %>
+        <%= f.input :title, label: "Chalet name" %>
+        <%= f.input :description, label: "Chalet description" %>
+        <%= f.input :city, label: "Location" %>
+        <%= f.input :daily_price, label: "Price per day" %>
+        <%= f.input :max_nb_of_guests, label: "Maximum number of guests" %>
+        <%= f.simple_fields_for :chalet_pictures do |chalet_picture| %>
+          <% if chalet_picture.object.new_record? %>
+          <%= chalet_picture.input :picture, label: "Image File" %>
+
+        <% end %>
+        <% end %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

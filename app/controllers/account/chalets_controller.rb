@@ -25,10 +25,10 @@ module Account
     end
 
     def update
-      @chalet = Chalet.update(chalet_params)
-      if @chalet.save
+      if @chalet.update(chalet_params)
+
         flash[:notice] = "Your chalet has been updated."
-        redirect_to redirect_to chalet_path(@chalet)
+        redirect_to chalet_path(@chalet)
       else
         flash[:alert] = "Something went wrong."
         render 'edit'
