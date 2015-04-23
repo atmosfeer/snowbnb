@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   root to: "home#index"
 
   devise_for :users
@@ -15,9 +17,14 @@ Rails.application.routes.draw do
 
   namespace :account do
     resource :user, only: [:show]
-    resources :chalets, only: [:new, :create, :edit, :update, :destroy, :index]
+    resources :chalets, only: [:new, :create, :destroy, :index]
+    resources :chalets, only: [:edit, :update] do
+      resources :chalet_pictures, only: [:destroy]
+    end
     resources :bookings, only: :index
   end
+
+
 
 
 end
