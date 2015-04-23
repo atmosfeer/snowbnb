@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.toasty
+//= require konami
 //= require jquery_ujs
 //= require underscore
 //= require gmaps/google
