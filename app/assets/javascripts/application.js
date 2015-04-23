@@ -14,6 +14,7 @@
 //= require jquery.toasty
 //= require konami
 //= require jquery_ujs
+//= require underscore
+//= require gmaps/google
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require_tree .
