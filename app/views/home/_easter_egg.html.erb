@@ -1,4 +1,4 @@
-<% content_for(:after_js) do%>
+<% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready( function(){
       $("body").toasty({
@@ -14,7 +14,5 @@
      $("#toasty-button").click( function(){
         $("body").toasty('pop');
       });
-
-
   <% end %>
 <% end %>
