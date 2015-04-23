@@ -17,9 +17,5 @@
 //= require underscore
 //= require gmaps/google
 //= require bootstrap-sprockets
-<<<<<<< HEAD
-=======
-
->>>>>>> f8c92b68cdce8fe6d26323c2b105c6fc5be7e4b9
 //= require_tree .
 //= require owl.carousel
