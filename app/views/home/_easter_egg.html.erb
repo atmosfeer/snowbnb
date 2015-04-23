@@ -2,8 +2,8 @@
   <%= javascript_tag do %>
     $(document).ready( function(){
       $("body").toasty({
-        image: "<%= asset_path('public/assets/toasty.png') %>",
-        sound: "<%= asset_path('public/assets/toasty.mp3') %>"
+        image: "<%= asset_path('toasty.png') %>",
+        sound: "<%= asset_path('toasty.mp3') %>"
       });
 
       var secret_stuff = new Konami();
