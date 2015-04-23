@@ -42,15 +42,6 @@ $navbar-profile-border-width: 1px;
  * SCSS code
  * ------------------------------------- */
 .navbar-snowbnb {
-  display: -webkit-flex; /* Safari */
-  display: flex;
-  -webkit-flex-flow: row nowrap; /* Safari */
-  flex-flow:         row nowrap;
-  -webkit-justify-content: space-around; /* Safari */
-  justify-content:         space-around;
-  -webkit-align-items: flex-start; /* Safari */
-  align-items:         flex-start;
-
   background: $navbar-bg;
   font-family: $navbar-font-family;
   border: none;
@@ -59,54 +50,47 @@ $navbar-profile-border-width: 1px;
   font-weight: $navbar-font-weight;
   letter-spacing: $navbar-letter-spacing;
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
-  height: $navbar-height;
   transition: background 0.4s ease;
   z-index: 10;
-
-  .nav-left {
-    width: 290px;
-    height: $navbar-item-height;
-    text-align: left;
-    .logo img {
-        height: $navbar-img-height;
-    }
+  .container-fluid {
+    margin: 0;
+    padding: 0;
   }
-
-  .nav-center {
-    width: auto;
-    height: $navbar-item-height;
+  .row {
+    margin: 0;
+    padding: 0;
     text-align: center;
-    vertical-align: middle;
-    .form-control {
-      width: 100%;
+    .navbar-section {
       height: $navbar-item-height;
-      color: $gray-much-lighter;
-      letter-spacing: $navbar-letter-spacing;
-      background: $navbar-bg;
-      border: 1px $navbar-bg;
-      border-radius: $navbar-btn-radius;
-    }
-  }
-
-  .nav-right {
-    width: 420px;
-    height: $navbar-item-height;
-    text-align: right;
-    vertical-align: middle;
-    .dropdown {
-      height: $navbar-item-height;
-      .img-avatar {
-        border: $navbar-profile-border-width solid $navbar-profile-border-color;
-        height: $navbar-img-height;
-        margin-right: 10px;
-        border-radius: $navbar-profile-radius;
+      margin: 10 0 10 0;
+      .logo img {
+          height: $navbar-img-height;
       }
-      .dropdown-menu {
+      .form-control {
+        width: 100%;
+        height: $navbar-item-height;
+        color: $gray-much-lighter;
+        letter-spacing: $navbar-letter-spacing;
+        background: $navbar-bg;
+        border: 1px $navbar-bg;
         border-radius: $navbar-btn-radius;
       }
-      .dropdown-menu > li {
-        border-radius: 0;
-        padding: 5px 0;
+      .dropdown {
+        height: $navbar-item-height;
+        .img-avatar {
+          border: $navbar-profile-border-width solid $navbar-profile-border-color;
+          height: $navbar-img-height;
+          margin-right: 10px;
+          border-radius: $navbar-profile-radius;
+        }
+        .dropdown-menu {
+          border-radius: $navbar-btn-radius;
+          left: 40%;
+        }
+        .dropdown-menu > li {
+          border-radius: 0;
+          padding: 5px 0;
+        }
       }
     }
   }

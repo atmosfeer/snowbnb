@@ -1,0 +1,47 @@
+<div class="body-wrapper">
+  <div class="row">
+    <%= image_tag current_user.picture(:medium), size: "200x200", class: "img-circle" %>
+    <h1>
+      <%= current_user.first_name %>
+      <%= link_to 'Edit my profile', edit_user_registration_path, class: "btn btn-primary" %>
+    </h1>
+    <p><%= current_user.email %> - Renting <%= current_user.chalets.count %> chalets.</p>
+  </div>
+  <div class="row">
+    <h1>
+      My Chalets
+      <%= link_to 'Add a chalet', new_account_chalet_path, class: "btn btn-primary" %>
+    </h1>
+    <% unless current_user.chalets.empty? %>
+      <% current_user.chalets.each do |chalet| %>
+        <%= render "chalets/chalet", chalet: chalet %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="row">
+    <h1>My Bookings</h1>
+    <% unless current_user.bookings.empty? %>
+      <ul>
+        <%= current_user.bookings.each do |booking| %>
+          <li>
+            <h4><%= booking.chalet.title %></h4>
+            <p><%= booking.total_price %></p>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <% current_user.chalets.each do |chalet| %>
+      <% unless chalet.bookings.empty? %>
+        <h3>Your Chalets' Bookings</h3>
+        <ul>
+          <% chalet.bookings.each do |booking| %>
+            <li>
+              <h4><%= booking.user.first_name %></h4>
+              <p><%= booking.total_price %></p>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="body-wrapper">
+  <div class="row">
+    <h1>
+      My Chalets
+      <%= link_to 'Add a chalet', new_account_chalet_path, class: "btn btn-primary" %>
+    </h1>
+    <% unless current_user.chalets.empty? %>
+      <% current_user.chalets.each do |chalet| %>
+        <%= render "chalets/chalet", chalet: chalet %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
