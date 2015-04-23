@@ -9,6 +9,7 @@ module Account
     def create
       chalet_params[:city] = chalet_params[:city].capitalize
       @chalet = current_user.chalets.new(chalet_params)
+      @chalet.availability = true
 
       if @chalet.save!
 

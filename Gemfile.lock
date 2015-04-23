@@ -244,11 +244,8 @@ DEPENDENCIES
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
   omniauth-facebook
-=======
   owlcarousel-rails
->>>>>>> f8c92b68cdce8fe6d26323c2b105c6fc5be7e4b9
   paperclip
   pg
   pry-byebug

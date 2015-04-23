@@ -1,9 +1,12 @@
 
+<% content_for(:after_js) %>
 
 <% if @chalet.chalet_pictures.any? %>
-  <div class="owl-carousel">
-    <% @chalet.chalet_pictures.each do |pic| %>
-      <div> <%= image_tag pic.picture.url(:original) %> </div>
-    <% end %>
+  <div class="centered-carousel">
+    <div class="owl-carousel">
+      <% @chalet.chalet_pictures.each do |pic| %>
+        <div> <%= image_tag pic.picture.url(:cover) %> </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
