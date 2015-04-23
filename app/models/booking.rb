@@ -3,7 +3,7 @@ class Booking < ActiveRecord::Base
   belongs_to :chalet
 
   validates :user, presence: true
-  validates :chalet, presence: true, uniqueness: { scope: :user }
+  validates :chalet, presence: true
   validates :arrive_on, presence: true
   validates :leave_on, presence: true
   validates :total_price, presence: true, numericality: true

@@ -8,13 +8,14 @@ html
 
 body
   = render 'layouts/navbar'
+  h4 class="notice" = notice
+  h4 class="alert"  = alert
 
   = yield
 
   = render 'layouts/footer'
 
-  p class="notice" = notice
-  p class="alert"  = alert
+
 
 
   = javascript_include_tag 'application'

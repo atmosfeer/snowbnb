@@ -12,7 +12,11 @@ body {
   background-color: $gray-much-lighter;
 }
 
-
+.alert{
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  color: $light-grey;
+}
 
 .body-wrapper {
   width: 70%;
