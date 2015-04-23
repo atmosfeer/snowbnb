@@ -8,7 +8,7 @@ class ChaletsController < ApplicationController
 
   def search
     @city = params[:search][:query].capitalize
-    @chalets = Chalet.where(city: @city)
+    @chalets = Chalet.near(@city, 500)
   end
 
 end
