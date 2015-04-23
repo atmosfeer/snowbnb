@@ -1,3 +1,8 @@
+#chalet-show {
+  margin: 0;
+  padding: 0;
+
+}
 .centered-carousel {
   margin: 20px auto;
   width: 85%;
@@ -8,9 +13,9 @@
 .chalet-name {
   position: absolute;
   z-index: 8;
-  top: 560px;
+  top: 150px;
   left: 0;
-  padding: 15 10 15 140;
+  padding: 15 10 15 170;
   background-color: rgb(70, 70, 70);
   border-radius: 3px;
   h2, h3 {
@@ -18,5 +23,54 @@
         margin: 0;
         color: white;
   }
+}
+
+.booking {
+  position: absolute;
+  z-index: 8;
+  top: 620px;
+  margin-left: 45%;
+
+}
+
+#chalet-show {
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.picture-owner {
+  border-radius: 50%;
+  border: 2px solid #C4CCDF;
+}
+
+.float-right {
+  float: right;
+  text-align: left;
+}
+
+.float-left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+#description {
+  text-align: center;
+
+}
+
+#guests {
+
+}
+
+#price {
+
+}
+
+#owner {
+  width: 30%;
 
 }
