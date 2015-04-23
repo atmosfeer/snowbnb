@@ -1,6 +1,6 @@
 
 <% content_for(:after_js) %>
-
+<div class="body-wrapper">
 
 <div class="chalet-name text-right">
   <h2><%= @chalet.title %> </h1>
@@ -24,32 +24,25 @@
 
 <div class="container" id="chalet-show">
   <div class="row">
-    <div class="col-xs-12 col-md-6" id="owner">
-      <div class="float-left">
-        <h3>Chalet owner</h3>
-        <%= image_tag @user.picture, class: "picture-owner" %>
-      </div>
-      <div class="float-right">
-        <%= link_to @user.first_name, user_path(@user) %>
-        <p> Email: <%= @user.email %> </p>
-      </div>
-      <div class="clear"></div>
+    <div class="col-xs-12 col-md-4" id="owner">
+      <%= image_tag @user.picture, class: "picture-owner" %>
+      <p> <%= link_to @user.first_name, user_path(@user) %> </p>
+      <p> <%= @user.email %> </p>
     </div>
 
 
-    <div class="col-xs-12 col-md-3" id="guests">
-      <h3> Sleeping places</h3>
-      <p> <%= @chalet.max_nb_of_guests %> </p>
+    <div class="col-xs-12 col-md-4" id="guests">
+      <h3> <i class="fa fa-bed"></i>: <%= @chalet.max_nb_of_guests %> </h3>
     </div>
 
-    <div class="col-xs-12 col-md-3" id="price">
-      <h3> Daily price </h3>
-      <p> <%= @chalet.daily_price %> </p>
+    <div class="col-xs-12 col-md-4" id="price">
+      <h3> <i class="fa fa-money"></i>: <%= @chalet.daily_price %>$/night</h3>
     </div>
 
     <div class="col-xs-12 col-md-6" id="description">
-      <h1>Chalet Description</h3>
       <p> <%= @chalet.description %> </p>
     </div>
   </div>
+</div>
+
 </div>

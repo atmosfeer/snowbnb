@@ -15,7 +15,7 @@
   z-index: 8;
   top: 150px;
   left: 0;
-  padding: 15 10 15 170;
+  padding: 15 10 15 220;
   background-color: rgb(70, 70, 70);
   border-radius: 3px;
   h2, h3 {
@@ -28,14 +28,14 @@
 .booking {
   position: absolute;
   z-index: 8;
-  top: 620px;
-  margin-left: 45%;
+  top: 580px;
+  margin-left: 27%;
 
 }
 
 #chalet-show {
   padding: 20px;
-  width: 80%;
+  width: 99%;
   margin: 0 auto;
 }
 
@@ -58,7 +58,8 @@
 }
 
 #description {
-  text-align: center;
+  padding-top: 40px;
+
 
 }
 
@@ -71,6 +72,9 @@
 }
 
 #owner {
-  width: 30%;
+  text-align: center;
+  p {
+    margin: 0;
+  }
 
 }
