@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row text-center">
+    <h1>My bookings</h1>
+  </div>
+
+  <% if !@relevant_bookings.empty? %>
+    <div class="row">
+      <% @relevant_bookings.each do |booking| %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card">
+            <p> <%= "Chalet: #{booking.chalet.title} in #{booking.chalet.city}" %> </p>
+            <%= image_tag booking.chalet.chalet_pictures.first.picture.url(:medium) %>
+            <p> Your arrival date: <%= booking.arrive_on %> </p>
+            <p> Your departure date: <%= booking.leave_on %> </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="col-xs-12 text-center">
+      <p> You have no current bookings</p>
+    </div>
+  <% end %>
+</div>

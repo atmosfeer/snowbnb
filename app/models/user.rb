@@ -7,7 +7,13 @@ class User < ActiveRecord::Base
   has_many :chalets
   has_many :bookings
 
-  has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: ':style/default-picture.png'
+  has_attached_file :picture,
+                    styles: { medium: "300x300>", thumb: "100x100>" },
+                    default_url: ':style/default-picture.png',
+                    convert_options: {
+                      thumb: "-background white -compose Copy -gravity center -extent 100x100",
+                      medium: "-background white -compose Copy -gravity center -extent 300x300",
+                    }
 
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
   validates :email, uniqueness: true, presence: true
