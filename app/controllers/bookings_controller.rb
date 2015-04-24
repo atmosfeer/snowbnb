@@ -15,6 +15,10 @@ class BookingsController < ApplicationController
     if !@chalet.available?(arrival_date, departure_date)
       flash.alert = "Hey loser, the chalet is not available on your selected dates, so fuck off."
       render 'new'
+    elsif @chalet.user_id == current_user.id
+      redirect_to account_user_path
+      flash.alert = "Hey loser, you're trying to book your own place, so fuck off."
+
     elsif @booking.save!
       redirect_to account_user_path
     else
@@ -38,16 +42,10 @@ class BookingsController < ApplicationController
   end
 
   def arrival_date
-    a_year  = booking_params["arrive_on(1i)"].to_i
-    a_month = booking_params["arrive_on(2i)"].to_i
-    a_day   = booking_params["arrive_on(3i)"].to_i
-    return Date.new(a_year, a_month, a_day)
+    Date.parse(booking_params[:arrive_on])
   end
 
   def departure_date
-    l_year  = booking_params["leave_on(1i)"].to_i
-    l_month = booking_params["leave_on(2i)"].to_i
-    l_day   = booking_params["leave_on(3i)"].to_i
-    return Date.new(l_year, l_month, l_day)
+    Date.parse(booking_params[:leave_on])
   end
 end
