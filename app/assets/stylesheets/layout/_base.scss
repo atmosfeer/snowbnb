@@ -14,10 +14,15 @@ body {
 
 h1 {
   font-size: 50px;
+
 .alert{
   position: absolute;
   background-color: rgba(0,0,0,0.5);
   color: $light-grey;
+
+}
+  h1 {
+  font-size: 50px;
 }
 
 .body-wrapper {
@@ -86,4 +91,8 @@ h1 {
       margin: 0 5 0 5;
     }
   }
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
 }
