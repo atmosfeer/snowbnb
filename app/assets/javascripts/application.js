@@ -18,6 +18,7 @@
 //= require gmaps/google
 //= require bootstrap-sprockets
 //= require owl.carousel
+//= require backgrounds
 //= require bootstrap-datepicker
 //= require_tree .
 

@@ -1,0 +1,26 @@
+$(function () {
+    var bg = $('.fullscreen-search');
+    var backgrounds = [
+      <%= "\'url(#{asset_path 'bg1.jpg'})\'" %>,
+      <%= "\'url(#{asset_path 'bg2.jpg'})\'" %>,
+      <%= "\'url(#{asset_path 'bg3.jpg'})\'" %>,
+      <%= "\'url(#{asset_path 'bg4.jpg'})\'" %>,
+      <%= "\'url(#{asset_path 'bg5.jpg'})\'" %> ];
+
+    var current = 0;
+
+    function nextBackground() {
+        bg.fadeOut(1000)
+        bg
+       .delay(1)
+       .queue(function(){
+           $(this).css('background', backgrounds[current = ++current % backgrounds.length]);
+           $(this).dequeue();
+       });
+       bg.fadeIn(1000)
+        setTimeout(nextBackground, 7000);
+    }
+
+    setTimeout(nextBackground, 7000);
+    bg.css('background', backgrounds[0]);
+});
