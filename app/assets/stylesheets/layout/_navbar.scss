@@ -18,7 +18,7 @@ $navbar-bg: RGBA(5, 3, 6, 0.5);
  * ------------------------------------- */
 $navbar-height: 80px;
 $navbar-vertical-padding: 15px;
-$navbar-horizontal-padding: 20px;
+$navbar-horizontal-padding: 25px;
 
 /* -------------------------------------
  * Navbar button
@@ -63,8 +63,11 @@ $navbar-profile-border-width: 1px;
     .navbar-section {
       height: $navbar-item-height;
       margin: 10 0 10 0;
-      .logo img {
-          height: $navbar-img-height;
+      .logo {
+        margin: 0;
+        display: block;
+        fill: white;
+        height: $navbar-img-height;
       }
       .form-control {
         width: 100%;
@@ -76,6 +79,7 @@ $navbar-profile-border-width: 1px;
         border-radius: $navbar-btn-radius;
       }
       .dropdown {
+        text-align: right;
         height: $navbar-item-height;
         .img-avatar {
           border: $navbar-profile-border-width solid $navbar-profile-border-color;
@@ -85,7 +89,6 @@ $navbar-profile-border-width: 1px;
         }
         .dropdown-menu {
           border-radius: $navbar-btn-radius;
-          left: 40%;
         }
         .dropdown-menu > li {
           border-radius: 0;
@@ -110,20 +113,12 @@ $navbar-profile-border-width: 1px;
   }
 
   a.dropdown-toggle {
-    color: $gray-lighter;
+    color: darken(white, 10%);
   }
 
   a.dropdown-toggle:hover {
     color: white;
   }
-
-  // a.dropdown-menu {
-  //   color: red;
-  // }
-
-  // a.dropdown-menu:hover {
-  //   color: dark-red;
-  // }
 }
 
 /* -------------------------------------
