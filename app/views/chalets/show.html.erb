@@ -1,5 +1,6 @@
 
 <% content_for(:after_js) %>
+<div class="body-wrapper">
 
 <div class="chalet-name text-right">
   <h2><%= @chalet.title %> </h1>
@@ -16,13 +17,32 @@
   </div>
 <% end %>
 
-<%= link_to "Book this chalet", new_chalet_booking_path(@chalet), class: "btn btn-primary" %>
+<div class="booking">
+  <%= link_to "Book this chalet", new_chalet_booking_path(@chalet), class: "btn btn-success btn-lg" %>
+</div>
 
-<h3>Chalet Description</h3>
-<p> <%= @chalet.description %> </p>
-<h3> Maximum number of guests</h3>
-<p> <%= @chalet.max_nb_of_guests %> </p>
-<h3> Daily price of the chalet</h3>
-<p> <%= @chalet.daily_price %> </p>
-<h3>Chalet owner</h3>
-<p><%= link_to @user.name, user_path(@user) %></p>
+
+<div class="container" id="chalet-show">
+  <div class="row">
+    <div class="col-xs-12 col-md-4" id="owner">
+      <%= image_tag @user.picture, class: "picture-owner" %>
+      <p> <%= link_to @user.first_name, user_path(@user) %> </p>
+      <p> <%= @user.email %> </p>
+    </div>
+
+
+    <div class="col-xs-12 col-md-4" id="guests">
+      <h3> <i class="fa fa-bed"></i>: <%= @chalet.max_nb_of_guests %> </h3>
+    </div>
+
+    <div class="col-xs-12 col-md-4" id="price">
+      <h3> <i class="fa fa-money"></i>: <%= @chalet.daily_price %>$/night</h3>
+    </div>
+
+    <div class="col-xs-12 col-md-6" id="description">
+      <p> <%= @chalet.description %> </p>
+    </div>
+  </div>
+</div>
+
+</div>
