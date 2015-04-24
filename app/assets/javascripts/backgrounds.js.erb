@@ -1,0 +1,27 @@
+$(function () {
+    var bg = $('.fullscreen-search');
+    $('body').css('background-color', 'black')
+    var backgrounds = [
+      <%= "\'url(#{asset_path 'bg1.jpg'})\'" %>,
+      <%= "\'url(#{asset_path 'bg2.jpg'})\'" %>,
+      <%= "\'url(#{asset_path 'bg3.jpg'})\'" %>,
+      <%= "\'url(#{asset_path 'bg4.jpg'})\'" %>,
+      <%= "\'url(#{asset_path 'bg5.jpg'})\'" %> ];
+
+    var current = 0;
+
+    function nextBackground() {
+        bg.fadeOut('slow')
+        bg
+       .delay(200)
+       .queue(function(){
+           $(this).css('background', backgrounds[current = ++current % backgrounds.length]);
+           $(this).dequeue();
+       });
+       bg.fadeIn('slow')
+        setTimeout(nextBackground, 7000);
+    }
+
+    setTimeout(nextBackground, 7000);
+    bg.css('background', backgrounds[0]);
+});

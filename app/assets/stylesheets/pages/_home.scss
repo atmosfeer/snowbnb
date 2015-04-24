@@ -1,12 +1,23 @@
 .fullscreen-search {
-  background: image-url("bg5_goodsize.jpg");
+  background: image-url("bg1.jpg");
   height: 100%;
-  width: 100%;
-  margin-top: -100px;
+  width:  100%;
   text-align: center;
   font-weight: 300;
   color: $light-grey;
-  h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+}
+
+.fullscreen-film {
+  background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.3));
+  height: 100%;
+  width: 100%;
+  margin-top: -100px;
+  padding-bottom: 145px;
+   h1 {
   color: white;
   padding-bottom: 20px;
   margin-top: 0px;
@@ -29,14 +40,6 @@
     color: $light-grey;
     letter-spacing: $navbar-letter-spacing;
   }
-}
-
-.fullscreen-film {
-  background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.3));
-  height: 100%;
-  width: 100%;
-  margin-top: -100px;
-  padding-bottom: 145px;
 }
 
 #main-search{
