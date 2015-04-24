@@ -1,6 +1,5 @@
 $(function () {
     var bg = $('.fullscreen-search');
-    $('body').css('background-color', 'black')
     var backgrounds = [
       <%= "\'url(#{asset_path 'bg1.jpg'})\'" %>,
       <%= "\'url(#{asset_path 'bg2.jpg'})\'" %>,
@@ -11,14 +10,14 @@ $(function () {
     var current = 0;
 
     function nextBackground() {
-        bg.fadeOut('slow')
+        bg.fadeOut(1000)
         bg
-       .delay(200)
+       .delay(1)
        .queue(function(){
            $(this).css('background', backgrounds[current = ++current % backgrounds.length]);
            $(this).dequeue();
        });
-       bg.fadeIn('slow')
+       bg.fadeIn(1000)
         setTimeout(nextBackground, 7000);
     }
 
