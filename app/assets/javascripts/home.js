@@ -8,7 +8,6 @@ $(document).ready(function () {
     var g = Math.floor(193 + 62 * height);
     var b = Math.floor(208 + 47 * height);
     var style = 'linear-gradient(rgba(' + h + ',' + h + ',' + h + ',0.5),rgba('+ w + ',' + w + ',' + w + ',0.5))';
-    console.log(r);
     $('.fullscreen-film').css({ 'background': style });
     $('.logo #Logo').attr('fill', 'rgba(' + r + ',' + g + ',' + b + ',1)');
   });
