@@ -8,13 +8,21 @@ html
 
 body
   = render 'layouts/navbar'
-  h4 class="notice" = notice
-  h4 class="alert"  = alert
+
+  - if flash[:notice]
+    div class="alert alert-info fade in">
+      button class="close" data-dismiss="alert"×
+      = flash[:notice]
+
+  - if flash[:alert]
+    div class="alert alert-error fade in">
+      button class="close" data-dismiss="alert"×
+      = flash[:alert]
+
 
   = yield
 
   = render 'layouts/footer'
-
 
 
 
