@@ -22,7 +22,7 @@
     <h1>My Bookings</h1>
     <% unless current_user.bookings.empty? %>
       <ul>
-        <%= current_user.bookings.each do |booking| %>
+        <% current_user.bookings.each do |booking| %>
           <li>
             <h4><%= booking.chalet.title %></h4>
             <p><%= booking.total_price %></p>
