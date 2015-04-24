@@ -16,6 +16,10 @@ h1 {
   font-size: 50px;
 }
 
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
 .alert{
   position: absolute;
   left: 40%;
@@ -30,8 +34,6 @@ h1 {
     border-bottom: 1px solid $gray-lighter;
   }
 }
-
-
 
 .card {
   margin: 30 auto;
@@ -87,10 +89,6 @@ h1 {
       margin: 0 5 0 5;
     }
   }
-}
-
-h1, h2, h3, h4 {
-  margin: 0;
 }
 
 ul {
