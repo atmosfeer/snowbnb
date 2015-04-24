@@ -22,22 +22,22 @@ nav class="navbar-snowbnb" role="navigation"
               li
                 = link_to account_chalets_path do
                   i class="fa fa-home"
-                  ' My Chalets
+                  |  My Chalets
 
               li
                 = link_to account_bookings_path do
                   i class="fa fa-book"
-                  ' My Bookings
+                  |  My Bookings
 
               li
                 = link_to account_user_path do
                   i class="fa fa-user"
-                  ' My Profile
+                  |  My Profile
 
               li
                 = link_to destroy_user_session_path, method: :delete do
                   i class="fa fa-sign-out"
-                  ' Sign out
+                  |  Sign out
         - else
           ul.list-inline
             li
@@ -45,7 +45,7 @@ nav class="navbar-snowbnb" role="navigation"
             li
               = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary btn-fb' do
                 i class="fa fa-facebook-square"
-                | Sign in
+                |  Sign in
             li
               = link_to "Sign up", new_user_registration_path, class: 'btn btn-primary'
 
