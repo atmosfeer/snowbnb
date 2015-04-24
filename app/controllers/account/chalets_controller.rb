@@ -11,6 +11,7 @@ module Account
       @chalet = current_user.chalets.new(chalet_params)
       @chalet.availability = true
 
+
       if @chalet.save!
 
       flash[:notice] = "Your chalet has been added."
