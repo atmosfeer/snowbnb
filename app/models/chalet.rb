@@ -12,4 +12,11 @@ class Chalet < ActiveRecord::Base
 
   geocoded_by :city
   after_validation :geocode, if: :city_changed?
+
+  def available?(arrival_date, departure_date)
+    results = self.bookings.select { |booking|
+      (departure_date < booking.arrive_on) || (arrival_date > booking.leave_on)
+    }
+    results.count == self.bookings.count
+  end
 end

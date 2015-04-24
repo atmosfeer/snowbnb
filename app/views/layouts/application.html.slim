@@ -8,6 +8,7 @@ html
 
 body
   = render 'layouts/navbar'
+
   - if flash[:notice]
     div class="alert alert-info fade in">
       button class="close" data-dismiss="alert"×
@@ -17,6 +18,7 @@ body
     div class="alert alert-error fade in">
       button class="close" data-dismiss="alert"×
       = flash[:alert]
+
 
   = yield
 
