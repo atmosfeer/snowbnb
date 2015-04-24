@@ -18,9 +18,7 @@ h1 {
 
 .alert{
   position: absolute;
-  background-color: rgba(0,0,0,0.5);
-  color: $light-grey;
-
+  left: 40%;
 }
 
 .body-wrapper {
@@ -93,4 +91,8 @@ h1 {
 
 h1, h2, h3, h4 {
   margin: 0;
+}
+
+ul {
+  list-style: none;
 }
