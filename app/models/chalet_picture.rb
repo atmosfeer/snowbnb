@@ -6,7 +6,7 @@ class ChaletPicture < ActiveRecord::Base
     convert_options: {
       thumb: "-background white -compose Copy -gravity center -extent 100x100",
       medium: "-background white -compose Copy -gravity center -extent 300x300",
-      cover: "-background white -compose Copy -gravity center -extent 1200x600",
+      cover: "-background white -compose Copy -gravity center -extent 800x500",
     }
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
   validates_attachment_size :picture, less_than: 5.megabytes
