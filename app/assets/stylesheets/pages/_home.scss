@@ -7,7 +7,7 @@
   image-url("home-background.jpg");
   height: 100%;
   width: 100%;
-  margin-top: -80px;
+  margin-top: -100px;
   padding-bottom: 145px;
   text-align: center;
   font-weight: 300;
@@ -45,38 +45,3 @@
 .home-search{
   margin-right: 10px;
 }
-
-
-
-
-
-
-
-////////////////////////////////////// Willem's Stuff Below
-// .fullscreen-bg {
-//   position:absolute;
-//   top:0;
-//   left:0;
-//   z-index: -1;
-//   width: 100%;
-//   height: 100%;
-//   margin: 0;
-//   background-image: image-url("home-background.jpg");
-// }
-
-// .fullscreen-search {
-//   top: 40%;
-//   padding-top: $navbar-height;
-//   padding-bottom: 207px;
-//   text-align: center;
-//   font-weight: 300;
-//   color: $gray-light;
-//   h1 {
-//   color: white;
-//   padding: 1.5em;
-//   }
-//   .form-control,
-//   .btn {
-//     margin: 0px 5px;
-//   }
-// }
